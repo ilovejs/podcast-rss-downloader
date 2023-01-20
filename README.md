@@ -21,6 +21,7 @@ another example is https://anchor.fm/s/3cbbb3b8/podcast/rss
 
 Second, plz check it's beautiful output :)
 
+```sh
 /home/mic/venv/podcast-downloader/bin/python /home/mic/SourceCode/BE/podcast-downloader/podcastdownloader/__main__.py download --feed https://feed.podbean.com/traderchats/feed.xml out 
 [2023-01-21 02:31:17,594 - root - INFO] - Retrieved RSS for Trader Chats
 [2023-01-21 02:31:17,594 - root - INFO] - All feeds filled
@@ -41,6 +42,7 @@ https://mcdn.podbean.com/mf/web/yei3iv/Ep_4_Why_Leave_Banking_205zm96.mp3
 https://mcdn.podbean.com/mf/web/ra6ziu/Ep_5_From_Banking_to_De-Fi8c649.mp3
 https://mcdn.podbean.com/mf/web/esad3x/Epsiode_1_-_Bursting_the_AMC_bubble6iwfz.mp3
 https://mcdn.podbean.com/mf/web/mxzqtz/Tracking_Bitcoin_Cyclesawey0.mp3
+```
 
 Third,
 
