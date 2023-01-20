@@ -1,6 +1,56 @@
 # podcast-downloader
 
-## Quick Start
+## Mission
+
+Backup your favorite podcast channel before they delete it.
+
+## Brief
+
+Promise to work on 21st Jan 2023 for Podbean.com at least.
+
+Original code can pass rss feed, i modifed to only export url in the feed.
+
+So, aria2c can be used to traffic control. aka show progress, multithread.
+
+First,
+
+e.g. https://traderchats.podbean.com/ has rss button on the left, just below profile picture.
+click that leads to rss feed. https://feed.podbean.com/traderchats/feed.xml
+
+another example is https://anchor.fm/s/3cbbb3b8/podcast/rss
+
+Second, plz check it's beautiful output :)
+
+/home/mic/venv/podcast-downloader/bin/python /home/mic/SourceCode/BE/podcast-downloader/podcastdownloader/__main__.py download --feed https://feed.podbean.com/traderchats/feed.xml out 
+[2023-01-21 02:31:17,594 - root - INFO] - Retrieved RSS for Trader Chats
+[2023-01-21 02:31:17,594 - root - INFO] - All feeds filled
+[2023-01-21 02:31:17,595 - root - INFO] - 16 episodes to download
+https://mcdn.podbean.com/mf/web/z6mi2m/Episode_2_-_Wisdom_of_Charts8jsng.mp3
+https://mcdn.podbean.com/mf/web/sku25b/Q4_Roundtable_The_Year_of_Pain_-_Melt_Up_or_Melt_Down_to_End_2022_bo0k9.m4a
+https://mcdn.podbean.com/mf/web/2e6v49/Ep_6_The_Importance_of_Positioning_awkdh.mp3
+https://mcdn.podbean.com/mf/web/drxhm2/BOND_MARKETS-_SIGNAL_OR_NOISE_6ro95.mp3
+https://mcdn.podbean.com/mf/web/w9svcv/Ep_3_Can_Trading_Skills_Save_Lives_8g9c8.mp3
+https://mcdn.podbean.com/mf/web/ryt3tx/Trader_Chat_s_Podcast9fef1.mp3
+https://mcdn.podbean.com/mf/web/uakb6r/Ep_7_Traders_That_Teach78g06.mp3
+https://mcdn.podbean.com/mf/web/jd9w7p/Ep_4_Simon_Harrisbdcun.mp3
+https://mcdn.podbean.com/mf/web/g3jjt6/Ep_8_Quant_driven_asset_allocation6cn2r.mp3
+https://mcdn.podbean.com/mf/web/5t73qj/Q3_Audio6tzxz.mp3
+https://mcdn.podbean.com/mf/web/na4i8m/Ep_5_Tony_Greer9je63.mp3
+https://mcdn.podbean.com/mf/web/3vt8h9/Q2_2070cg8.mp3
+https://mcdn.podbean.com/mf/web/yei3iv/Ep_4_Why_Leave_Banking_205zm96.mp3
+https://mcdn.podbean.com/mf/web/ra6ziu/Ep_5_From_Banking_to_De-Fi8c649.mp3
+https://mcdn.podbean.com/mf/web/esad3x/Epsiode_1_-_Bursting_the_AMC_bubble6iwfz.mp3
+https://mcdn.podbean.com/mf/web/mxzqtz/Tracking_Bitcoin_Cyclesawey0.mp3
+
+Third,
+
+copy into trade.txt for all generated urls above
+
+aria2c -x 10 -i trade.txt
+
+## Quick start (whole process for run python in zsh)
+
+Basically, we redo the process again, so you can download / backup ur favorite podcast tonight.
 
 mkdir out
 
