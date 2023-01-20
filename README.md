@@ -4,7 +4,7 @@
 
 Backup your favorite podcast channel before they delete it.
 
-## Brief
+## Brief for the impatient
 
 Promise to work on 21st Jan 2023 for Podbean.com at least.
 
