@@ -1,10 +1,42 @@
 # podcast-downloader
 
+## Quick Start
+
+mkdir out
+
+pycharm run __main__.py with param:
+
+download --feed https://feed.podbean.com/traderchats/feed.xml out
+
+touch trade.txt with url links from above stdin output
+
+aria2c -x 10 -i trade.txt
+
+
+## Usage
+
+`python3 -m podcastdownloader download   --help`
+
+Usage: python -m podcastdownloader download [OPTIONS] DESTINATION
+
+Options:
+  --opml TEXT
+  -F, --file TEXT
+  -f, --feed TEXT
+  -v, --verbose
+  -l, --limit INTEGER
+  -t, --threads INTEGER
+  -w, --write-playlist [m3u]
+  --help                      Show this message and exit.
+
+
+## Intro
+
 This is a simple tool for downloading all the available episodes in an RSS feed to disk, where they can be listened to offline.
 
 Firstly, Python 3 must be installed, then the requirements must be installed. These are documented in `requirements.txt` and can be installed via the command `python3 -m pip install -r requirements.txt`.
 
-## Arguments
+## out of date cli args
 
 Following are the arguments that can be supplied to the program:
 
@@ -66,6 +98,11 @@ Following is an example command to download a single feed to a podcasts folder.
 
 `python3 -m podcastdownloader media/podcasts --f 'http://linustechtips.libsyn.com/wanshow' -o podcasts.opml`
 
+python3 -m podcastdownloader download --feed 'http://linustechtips.libsyn.com/wanshow' v
+
 ## Podcast Feed Files
 
-A feed file, for use with the `--file` option, is a simple text file with one URL that leads to the RSS feed per line. The podcastdownloader will ignore all lines beginning with a hash (#), as well as empty lines to allow comments and a rudimentary structure if desired. Additionally, comments can be appended to the end of a line with a feed URL. As long as there is a space between the hash and the end of the URL, it will be removed when the file is parsed.
+A feed file, for use with the `--file` option, is a simple text file with one URL that leads to the RSS feed per line. 
+The podcastdownloader will ignore all lines beginning with a hash (#), as well as empty lines to allow comments and a rudimentary structure if desired. 
+Additionally, comments can be appended to the end of a line with a feed URL. 
+As long as there is a space between the hash and the end of the URL, it will be removed when the file is parsed.

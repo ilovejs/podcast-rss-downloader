@@ -84,18 +84,19 @@ class Episode:
             raise EpisodeException('Episode has no calculated path')
         try:
             async with session.get(self.url) as response:
-                if not self.file_path.exists():
-                    data = await response.content.read()
-                    self.file_path.parent.mkdir(exist_ok=True, parents=True)
-                    with open(self.file_path, 'wb') as file:
-                        file.write(data)
-                    logger.info(f'Downloaded {self.title} in podcast {self.podcast_name}')
-                    try:
-                        from podcastdownloader.tag_engine import TagEngine
-                        TagEngine.tag_episode(self)
-                    except mutagen.MutagenError as e:
-                        logger.error(f'Failed to tag episode {self.title}: {e}')
-                else:
-                    logger.debug(f'File already exists at {self.file_path}')
+                print(self.url)
+                # if not self.file_path.exists():
+                #     data = await response.content.read()
+                #     self.file_path.parent.mkdir(exist_ok=True, parents=True)
+                #     with open(self.file_path, 'wb') as file:
+                #         file.write(data)
+                #     logger.info(f'Downloaded {self.title} in podcast {self.podcast_name}')
+                #     try:
+                #         from podcastdownloader.tag_engine import TagEngine
+                #         TagEngine.tag_episode(self)
+                #     except mutagen.MutagenError as e:
+                #         logger.error(f'Failed to tag episode {self.title}: {e}')
+                # else:
+                #     logger.debug(f'File already exists at {self.file_path}')
         except aiohttp.client_exceptions.ClientError as e:
             raise EpisodeException(f'Failed to download "{self.title}" from "{self.podcast_name}": {e}')

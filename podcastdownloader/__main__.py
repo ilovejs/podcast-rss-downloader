@@ -113,12 +113,12 @@ def cli_download(
         destination.mkdir(parents=True)
 
     all_feeds = set(itertools.chain(feed, util.load_feeds_from_text_file(file), util.load_feeds_from_opml(opml)))
-    logger.info(f'{len(all_feeds)} feeds found')
+    #logger.info(f'{len(all_feeds)} feeds found')
     if all_feeds:
         asyncio.run(download_episodes(all_feeds, destination, threads, write_playlist, limit))
     else:
         logger.error('No feeds have been provided')
-    logger.info('Program Complete')
+    #logger.info('Program Complete')
 
 
 async def download_episodes(
